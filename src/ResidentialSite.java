@@ -1,11 +1,13 @@
 public class ResidentialSite {
 
-    public double getTaxAmount(double base) {
+
+    public double getBillableAmount(double _units, double _rate) {
+        double base = getBaseAmount(_units, _rate);
         double tax = base * Site.TAX_RATE;
-        return tax;
+        return base + tax;
     }
 
-    public double getBaseAmount(double _units, double _rate) {
+    private double getBaseAmount(double _units, double _rate) {
         return _units * _rate;
     }
 }
