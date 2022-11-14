@@ -1,8 +1,11 @@
 public class LifelineSite {
 
-    public double getBillableAmount(double _units, double _rate) {
-        double base = _units * _rate * 0.5;
+    private double getTaxAmount(double base) {
         double tax = base * Site.TAX_RATE * 0.2;
-        return base + tax;
+        return tax;
+    }
+
+    private double getBaseAmount(double _units, double _rate) {
+        return _units * _rate * 0.5;
     }
 }
